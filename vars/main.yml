@@ -1,0 +1,9 @@
+---
+# vars file for pandoc
+pandoc_platform: '{{ pandoc_os }}-{{ pandoc_arch }}'
+pandoc_name: pandoc-{{ pandoc_ver }}
+pandoc_archive: '{{ pandoc_name }}-{{ pandoc_platform }}.{{ pandoc_archive_type | default("tar.gz") }}'
+pandoc_url: '{{ pandoc_mirror }}/{{ pandoc_ver }}/{{ pandoc_archive }}'
+pandoc_checksum: '{{ pandoc_checksums[pandoc_ver][pandoc_platform] }}'
+pandoc_install_dir: '{{ pandoc_parent_install_dir }}/{{ pandoc_name }}'
+
