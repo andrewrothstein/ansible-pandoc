@@ -9,41 +9,40 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: check for existing install
+- name: check for install in {{ pandoc_install_dir }}...
   become: yes
   stat:
     path: '{{ pandoc_install_dir }}'
   register: pandoc_binary
 - when: not pandoc_binary.stat.exists
   block:
-    - name: download archive
+    - name: downloading {{ pandoc_url }} to {{ pandoc_tmp_archive }}
       become: yes
       become_user: root
       get_url:
         url: '{{ pandoc_url }}'
-        dest: /tmp/{{ pandoc_archive }}
+        dest: '{{ pandoc_tmp_archive }}'
         mode: 0644
         checksum: '{{ pandoc_checksum }}'
-    - name: unarchive
+    - name: unarchiving {{ pandoc_tmp_archive }} to {{ pandoc_parent_install_dir }}
       become: yes
       become_user: root
       unarchive:
         remote_src: yes
-        src: /tmp/{{ pandoc_archive }}
+        src: '{{ pandoc_tmp_archive }}'
         dest: '{{ pandoc_parent_install_dir }}'
         creates: '{{ pandoc_install_dir }}'
   always:
-    - name: cleanup
+    - name: rm {{ pandoc_tmp_archive }}
       become: yes
       become_user: root
       file:
-        path: /tmp/{{ pandoc_archive }}
-- name: links...
+        path: '{{ pandoc_tmp_archive }}'
+- name: linking executables in {{ pandoc_install_dir }}/bin to {{ pandoc_parent_install_dir }}/bin
   become: yes
   become_user:  root
   with_items:
     - pandoc
-    - pandoc-citeproc
   file:
     src: '{{ pandoc_install_dir }}/bin/{{ item }}'
     dest: '{{ pandoc_parent_install_dir }}/bin/{{ item }}'

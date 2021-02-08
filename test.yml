@@ -2,3 +2,9 @@
 - hosts: all
   roles:
   - role: '{{ playbook_dir }}'
+  tasks:
+  - command: /usr/local/bin/pandoc --version
+    register: pandoc_test_output
+  - name: pandoc --version
+    debug:
+      msg: '{{ pandoc_test_output.stdout }} '
