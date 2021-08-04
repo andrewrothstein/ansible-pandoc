@@ -1,6 +1,6 @@
 andrewrothstein.pandoc
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-pandoc.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-pandoc)
+![Build Status](https://github.com/andrewrothstein/ansible-pandoc/actions/workflows/build.yml/badge.svg)
 
 Installs [pandoc](https://pandoc.org/).
 
