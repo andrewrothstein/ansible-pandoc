@@ -1,6 +1,6 @@
 ---
 # defaults file for pandoc
-pandoc_ver: '2.15'
+pandoc_ver: '2.16'
 pandoc_os: linux
 pandoc_arch: amd64
 pandoc_parent_install_dir: /usr/local
@@ -56,3 +56,8 @@ pandoc_checksums:
     linux-amd64: sha256:31074d3a6a62c22ef53d0ebfed2a4798f2b95034863cce215bf84e4601ad17c4
     # https://github.com/jgm/pandoc/releases/download/2.15/pandoc-2.15-windows-x86_64.zip
     windows-x86_64: sha256:a106d810eaa736b03c6d30b7c3e5620e0937989d4482ce7f1351427ceccfce98
+  '2.16':
+    # https://github.com/jgm/pandoc/releases/download/2.16/pandoc-2.16-linux-amd64.tar.gz
+    linux-amd64: sha256:d3961adc1805641bf11dcd36ed5f5ed168c84f67e6d7b920ed981cc4ac1e0b07
+    # https://github.com/jgm/pandoc/releases/download/2.16/pandoc-2.16-windows-x86_64.zip
+    windows-x86_64: sha256:e60217de897aa89d2d03ccb1734ea8874e839a11965cf389680bbe22404da9a1
