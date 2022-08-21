@@ -29,8 +29,9 @@ dl_ver() {
 
     printf "  '%s':\n" $ver
 
+    dl $ver linux arm64
     dl $ver linux amd64
     dl $ver windows x86_64 zip
 }
 
-dl_ver ${1:-2.19}
+dl_ver ${1:-2.19.1}
