@@ -1,5 +1,7 @@
 ---
 # vars file for pandoc
+pandoc_os: '{{ ansible_system | lower }}'
+pandoc_arch: '{{ pandoc_arch_map[ansible_architecture] }}'
 pandoc_platform: '{{ pandoc_os }}-{{ pandoc_arch }}'
 pandoc_name: pandoc-{{ pandoc_ver }}
 pandoc_archive: '{{ pandoc_name }}-{{ pandoc_platform }}.{{ pandoc_archive_type | default("tar.gz") }}'
