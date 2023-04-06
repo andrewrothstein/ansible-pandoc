@@ -1,6 +1,6 @@
 ---
 # defaults file for pandoc
-pandoc_ver: 3.1.1
+pandoc_ver: 3.1.2
 pandoc_arch_map:
   386: i386
   aarch64: arm64
@@ -135,3 +135,10 @@ pandoc_checksums:
     linux-amd64: sha256:52b25f0115517e32047a06d821e63729108027bd06d9605fe8eac0fa83e0bf81
     # https://github.com/jgm/pandoc/releases/download/3.1.1/pandoc-3.1.1-windows-x86_64.zip
     windows-x86_64: sha256:ab39e7d0780f0f4be650e82738bfaaafbbd571ee295e4c440bcf99efb5a07174
+  '3.1.2':
+    # https://github.com/jgm/pandoc/releases/download/3.1.2/pandoc-3.1.2-linux-arm64.tar.gz
+    linux-arm64: sha256:8ac04ce0aedae38f0c9f64bfe634910378cc326d091092395a2140a7ec819d54
+    # https://github.com/jgm/pandoc/releases/download/3.1.2/pandoc-3.1.2-linux-amd64.tar.gz
+    linux-amd64: sha256:4e1c607f7e4e9243fa1e1f5b208cd4f1d3f6fd055d5d8c39ba0cdc38644e1c35
+    # https://github.com/jgm/pandoc/releases/download/3.1.2/pandoc-3.1.2-windows-x86_64.zip
+    windows-x86_64: sha256:c3541f1a352003498979f2659c2570ac6dd227ec12533b75a76c4d109e75d218
